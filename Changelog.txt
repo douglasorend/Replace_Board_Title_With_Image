@@ -1,3 +1,6 @@
+v1.0.2 - November 26th, 2017
+o Second attempt to add sanitization code for the new relative URL field.
+
 v1.0.1 - November 23rd, 2017
 o Added forgotten sanitization code for the new relative URL field.
 
