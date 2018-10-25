@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:RBTWI</id>
+<name>Replace Board Title With Image</name>
+<version>1.1</version>
+
+<file name="$languagedir/ManageBoards.spanish_latin.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['mboards_board_image'] = 'Imagen del t&iacute;tulo del foro de remplazo.';
+$txt['mboards_board_image_desc'] = '<strong>NOTA:</strong> Los enlaces deben ser relativas a esta foro! ';
+]]></add>
+	</operation>
+</file>
+</modification>
+
+<file name="$languagedir/ManageBoards.spanish_latin-utf8.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['mboards_board_image'] = 'Imagen del título del foro de remplazo.';
+$txt['mboards_board_image_desc'] = '<strong>NOTA:</strong> Los enlaces deben ser relativas a esta foro! ';
+]]></add>
+	</operation>
+</file>
+</modification>

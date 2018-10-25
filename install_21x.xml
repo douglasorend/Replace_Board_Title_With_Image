@@ -17,10 +17,6 @@
 </file>
 <file name="$sourcedir/Subs-BoardIndex.php">
 	<!-- getBoardIndex function -->
-	<operation>
-		<search position="before"><![CDATA[global $settings, $context]]></search>
-		<add><![CDATA[, $boarddir]]></add>
-	</operation>
 	<operation>	<!-- line 46 -->
 		<search position="before"><![CDATA[b.id_board, b.name AS board_name, b.description,]]></search>
 		<add><![CDATA[ b.img_name, b.img_width, b.img_height,]]></add>
@@ -31,13 +27,9 @@
 	$styles = '';]]></add>
 	</operation>
 	<operation>	<!-- line 148 -->
-		<search position="after"><![CDATA[
-			}
-			if (!empty($row_board['id_moderator']))]]></search>
-		<add><![CDATA[
-
-				// START: Add Board Image mod
-				if (!empty($row_board['img_name']) && file_exists($boarddir . '/' . $row_board['img_name']))
+		<search position="after"><![CDATA[// We can do some of the figuring-out-what-icon now.]]></search>
+		<add><![CDATA[// START: Add Board Image mod
+				if (!empty($row_board['img_name']))
 					$styles .= '
 		#board_' . $row_board['id_board'] . ' .info .subject { ' .
 			'background: url("' . $row_board['img_name'] . '") no-repeat; ' .
@@ -47,7 +39,9 @@
 			'display: inline-block; ' .
 			'overflow: hidden; ' .
 		'}';
-				// END: Add Board Image mod]]></add>
+				// END: Add Board Image mod
+
+				]]></add>
 	</operation>
 	<operation>	<!-- line 284 -->
 		<search position="after"><![CDATA[// By now we should know the most recent post...if we wanna know it that is.]]></search>
@@ -63,7 +57,7 @@
 <file name="$sourcedir/Subs-Boards.php">
 	<!-- modifyBoard function -->
 	<operation>	<!-- line 475 -->
-		<search position="before"><![CDATA[global $sourcedir, $cat_tree, $boards, $boardList, $modSettings, $smcFunc]]></search>
+		<search position="before"><![CDATA[global $cat_tree, $boards, $smcFunc]]></search>
 		<add><![CDATA[, $boarddir]]></add>
 	</operation>
 	<operation>	<!-- line 654 -->
@@ -88,9 +82,9 @@
 
 	<!-- getBoardTree function -->
 	<operation>	<!-- line 1041 -->
-		<search position="before"><![CDATA[b.num_posts, b.num_topics, c.id_cat, c.name AS cat_name, c.cat_order, c.can_collapse]]></search>
+		<search position="before"><![CDATA['b.num_topics', 'b.deny_member_groups', 'c.id_cat', 'c.name AS cat_name',]]></search>
 		<add><![CDATA[,
-			b.img_name, b.img_width, b.img_height]]></add>
+		'b.img_name', 'b.img_width', 'b.img_height',]]></add>
 	</operation>
 	<operation>	<!-- line 1091 -->
 		<search position="after"><![CDATA['prev_board' => $prevBoard]]></search>
@@ -106,7 +100,7 @@
 <file name="$themedir/ManageBoards.template.php">
 	<!-- template_modify_board function -->
 	<operation>	<!-- line 335 -->
-		<search position="after"><![CDATA[<strong>', $txt['permission_profile'], ':</strong><br />]]></search>
+		<search position="after"><![CDATA[<strong>', $txt['permission_profile'], ':</strong><br>]]></search>
 		<add><![CDATA[<strong>', $txt['mboards_board_image'], ':</strong><br />
 							<span class="smalltext">', $txt['mboards_board_image_desc'], '</span>
 						</dt>
