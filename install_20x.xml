@@ -3,11 +3,11 @@
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
 <id>Dougiefresh:RBTWI</id>
 <name>Replace Board Title With Image</name>
-<version>1.0</version>
+<version>1.0.1</version>
 
 <file name="$sourcedir/ManageBoards.php">
 	<!-- EditBoard2 function -->
-	<operation>
+	<operation>	<!-- line 595 -->
 		<search position="after"><![CDATA[// Checkboxes....]]></search>
 		<add><![CDATA[// Board image?
 		$boardOptions['board_image'] = $_POST['board_image'];
@@ -69,7 +69,7 @@
 		$boardOptions['board_image'] = str_replace('\\', '/', $boardOptions['board_image']);
 		$img_dim = @getimagesize($boarddir . '/' . $boardOptions['board_image']);
 		$boardUpdates[] = 'img_name = {string:img_name}';
-		$boardUpdateParameters['img_name'] = !empty($img_dim[0]) && !empty($img_dim[1]) ? $boardOptions['board_image'] : '';
+		$boardUpdateParameters['img_name'] = !empty($img_dim[0]) && !empty($img_dim[1]) ? $smcFunc['htmlspecialchars']($boardOptions['board_image'], ENT_QUOTES) : '';
 		$boardUpdates[] = 'img_width = {int:img_width}';
 		$boardUpdateParameters['img_width'] = !empty($img_dim[0]) ? (int) $img_dim[0] : 0;
 		$boardUpdates[] = 'img_height = {int:img_height}';

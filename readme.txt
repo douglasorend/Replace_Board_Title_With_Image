@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]REPLACE BOARD TITLE WITH IMAGE v1.0[/b][/size][/color]
+[center][color=red][size=16pt][b]REPLACE BOARD TITLE WITH IMAGE v1.0.1[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4162]Link to Mod[/url]
 [/center]
 [hr]
@@ -16,6 +16,7 @@ This mod was tested on SMF 2.0.14, but should work on SMF 2.0 and up.  SMF 1.x i
 
 [color=blue][b][size=12pt][u]Related Discussions[/u][/size][/b][/color]
 o [url=https://www.simplemachines.org/community/index.php?topic=547240.msg3882384#msg3882384]A Neat Way To Enhance A Board![/url]
+o [url=https://www.simplemachines.org/community/index.php?topic=547224.msg3882203#msg3882203]Will it wreak havoc to use an image here?[/url]
 
 [color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
 The changelog has been removed and can be seen at [url=http://www.xptsp.com/board/index.php?topic=1615.msg2311#msg2311]XPtsp.com[/url].
