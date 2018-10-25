@@ -3,7 +3,7 @@
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
 <id>Dougiefresh:RBTWI</id>
 <name>Replace Board Title With Image</name>
-<version>1.1</version>
+<version>1.2</version>
 
 <file name="$sourcedir/ManageBoards.php">
 	<!-- EditBoard2 function -->
@@ -65,7 +65,7 @@
 		<add><![CDATA[if (isset($boardOptions['board_image']))
 	{
 		$boardOptions['board_image'] = str_replace('\\', '/', $boardOptions['board_image']);
-		if (file_exists($sourcedir . '/Subs-SVG.php'))
+		if (!file_exists($sourcedir . '/Subs-SVG.php'))
 			$img_dim = @getimagesize($boarddir . '/' . $boardOptions['board_image']);
 		else
 			$img_dim = @svg_getimagesize($boarddir . '/' . $boardOptions['board_image']);
@@ -83,7 +83,7 @@
 	<!-- getBoardTree function -->
 	<operation>	<!-- line 1041 -->
 		<search position="before"><![CDATA['b.num_topics', 'b.deny_member_groups', 'c.id_cat', 'c.name AS cat_name',]]></search>
-		<add><![CDATA[,
+		<add><![CDATA[
 		'b.img_name', 'b.img_width', 'b.img_height',]]></add>
 	</operation>
 	<operation>	<!-- line 1091 -->
