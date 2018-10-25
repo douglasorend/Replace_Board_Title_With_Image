@@ -3,7 +3,7 @@
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
 <id>Dougiefresh:RBTWI</id>
 <name>Replace Board Title With Image</name>
-<version>1.2</version>
+<version>1.3</version>
 
 <file name="$sourcedir/ManageBoards.php">
 	<!-- EditBoard2 function -->
@@ -22,7 +22,7 @@
 		<add><![CDATA[, $boarddir]]></add>
 	</operation>
 	<operation>	<!-- line 46 -->
-		<search position="before"><![CDATA[b.id_board, b.name AS board_name, b.description,]]></search>
+		<search position="before"><![CDATA[b.name AS board_name, b.description,]]></search>
 		<add><![CDATA[ b.img_name, b.img_width, b.img_height,]]></add>
 	</operation>
 	<operation>

@@ -1,3 +1,6 @@
+v1.3 - January 2nd, 2018
+o Resolved incompatability with [url=https://custom.simplemachines.org/mods/index.php?mod=3023]Board color and icons[/url] mod.
+
 v1.2 - December 29th, 2017
 o Fixed coding error that fails to properly get image sizes.
 o SMF 2.1: Fixed syntax error in [b]Sources/Subs-Boards.php[/b].
